@@ -1,14 +1,11 @@
-import Header from './Components/Header/Header';
-import CarouselEffect from './Components/Carousel/CarouselEffect';
+import Routing from './Router';
 import './App.css';
-import Category from './Components/Category/Category';
+
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <CarouselEffect />
-      <Category />
+      <Routing />
     </div>
   );
 }
