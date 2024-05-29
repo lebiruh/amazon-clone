@@ -1,9 +1,13 @@
 import React from 'react'
+import LayOut from "../../Components/LayOut/LayOut";
 import classes from "./Orders.module.css";
+
 
 const Orders = () => {
   return (
-    <div>Orders</div>
+    <LayOut>      
+      <div>Orders</div>
+    </LayOut>
   )
 }
 

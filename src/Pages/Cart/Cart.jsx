@@ -1,9 +1,12 @@
 import React from 'react'
+import LayOut from "../../Components/LayOut/LayOut";
 import classes from "./cart.module.css";
 
 const Cart = () => {
   return (
-    <div>Cart</div>
+    <LayOut>
+      <div>Cart</div>
+    </LayOut>
   )
 }
 
