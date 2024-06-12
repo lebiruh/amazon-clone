@@ -75,7 +75,7 @@
   margin-right: 40px;
 }
 
-.product-flexed {
+.product_flexed {
   height: 50vh;
 }
 
@@ -84,7 +84,7 @@
   height: auto;  
 }
 
-@media screen and (max-width: 768) {
+@media screen and (max-width: 768px) {
   .product_flexed {
     display: flex;
     flex-direction: column;

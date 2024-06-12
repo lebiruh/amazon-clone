@@ -4,6 +4,7 @@
   max-width: 1450px;
   margin: 100px auto 100px auto;
   justify-items: center;
+  gap: 50px;
 }
 
 .products_container section {

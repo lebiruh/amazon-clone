@@ -9,13 +9,14 @@ import {axiosInstance} from "../../Api/axios";
 import {ClipLoader} from "react-spinners";
 import { db } from '../../Utility/firebase';
 import { useNavigate } from 'react-router-dom';
+import { Type } from '../../Utility/action.type';
 
 const Payment = () => {
 
   const [cardError, setCardError] = useState(null);
   const [processing, setProcessing] = useState(false);
 
-  const [{user, basket}] = useContext(DataContext);
+  const [{user, basket}, dispatch] = useContext(DataContext);
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
@@ -66,6 +67,10 @@ const Payment = () => {
             amount: paymentIntent.amount,
             created: paymentIntent.created
           });
+
+        // Empty the basket
+        dispatch({type: Type.EMPTY_BASKET})
+
         setProcessing(false);
         navigate("/orders", {state: {msg: "You have placed your order"}});
     } catch (error) {
@@ -99,7 +104,7 @@ const Payment = () => {
           <h3>Review items and delivery</h3>
           <div>
             {
-              basket?.map((item) => <ProductCard product={item} flex={true}/>)
+              basket?.map((item, i) => <ProductCard product={item} flex={true} key={i}/>)
             }
           </div>
         </div>

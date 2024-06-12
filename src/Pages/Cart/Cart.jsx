@@ -41,8 +41,8 @@ const Cart = () => {
             basket?.length === 0 ? (<p>Oops ! No item in your cart</p>) : (
               basket?.map((item, i) => {
                 return (
-                  <section className={classes.cart_product}>
-                    <ProductCard key={i} product={item} renderDesc={true} flex={true} renderAdd={false}/>
+                  <section className={classes.cart_product} key={i}>
+                    <ProductCard product={item} renderDesc={true} flex={true} renderAdd={false}/>
                     <div className={classes.btn_container}>
                       <button className={classes.btn} onClick={()=>increment(item)}>
                         <IoIosArrowUp size={20}/>

@@ -7,8 +7,8 @@ const Category = () => {
   return (
     <section className={classes.category_container}>
       {
-        categoryInfo.map((info) => {
-          return <CategoryCard data = {info}/>
+        categoryInfo.map((info, i) => {
+          return <CategoryCard data = {info} key={i}/>
         })
       }
     </section>
